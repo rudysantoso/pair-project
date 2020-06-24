@@ -2,10 +2,9 @@
   "development": {
     "username": "rudysantoso",
     "password": "anaksuyit",
-    "database": "db-development",
+    "database": "db-project",
     "host": "127.0.0.1",
-    "dialect": "postgres",
-    "operatorsAliases": false
+    "dialect": "postgres"
   },
   "test": {
     "username": "root",
