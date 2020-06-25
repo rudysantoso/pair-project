@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1> data user</h1>
+  <% datauser.forEach( el => { %>
+    <ul>
+      <li>nama: <%= el.name %></li>
+      <li>email: <%= el.email %></li>
+      <li>password: <%= el.password %></li>
+    </ul>
+  <% }) %>
+</body>
+</html>
