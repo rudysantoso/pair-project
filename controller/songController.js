@@ -1,10 +1,8 @@
 const { Song } = require('../models')
 
 class SongController{
-    static findAll(req, res, next){
-        const { Title, Artist, Genre, comment } = req.body
-        console.log(req.body)
-        Song.findAll({ Title, Artist, Genre, comment })
+    static read(req, res, next){
+        Song.findAll({})
             .then(dataSong => {
                 res.status(200).json(dataSong)
             })
@@ -22,7 +20,6 @@ class SongController{
             res.status(400).json(err)
         })
     }
-    static 
 }
 
 module.exports = SongController
