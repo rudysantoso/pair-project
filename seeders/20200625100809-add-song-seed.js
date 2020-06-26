@@ -2,7 +2,7 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.bulkInsert('Song', [{
+    return queryInterface.bulkInsert('Songs', [{
       Title: 'asdasd',
       Artist: 'asd',
       Genre: 'punk',
