@@ -1,11 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Shoes Shop</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="/cssnya.css" type="text/css">
 </head>
+
 <body>
-    <h1>selamat datang ke dalam fosan</h1>
+    <div class="warna">
+        <div class="warna1">
+            <div class="baris">
+                <div>
+                    <div>
+                        <img src="./image/fosanlogo.png" width="50px">
+                    </div>
+                </div>
+                <div>
+                    <h2>FOSAN STORE</h2>
+                </div>
+            </div>
+            <div class="baris">
+                <div>
+                    <h5>PRIA</h5>
+                </div>
+                <div>
+                    <h5>WANITA</h5>
+                </div>
+                <div>
+                    <h5>ANAK</h5>
+                </div>
+            </div>
+            <div>
+                <div class="center">
+                    <input class="search" type="text" placeholder="Cari apa ?" required>
+                    <input class="button" type="button" value="Cari">
+                </div>
+            </div>
+        </div>
+        <div class="warna2">
+            <div>
+                <h5>Login!</h5>
+            </div>
+            <div>
+                <img src="./image/shopping-bag.png" width=50px>
+            </div>
+        </div>
+    </div>
+
+    <!-- body -->
+    <div class="bodynya">
+        <% data.forEach(el => { %>
+        <div class="ui card">
+            <div class="image">
+                <img src="<%= el.dataValues.image%>">
+            </div>
+            <div class="content">
+                <a class="header"><%=el.dataValues.merk%></a>
+                <div class="meta">
+                    <span class="date"><%=el.dataValues.jenis%></span>
+                </div>
+                <div class="description">
+                    <%=el.dataValues.harga%>
+                </div>
+            </div>
+            <div class="extra content">
+                Ukuran <%=el.dataValues.ukuran%>
+                <a>
+                    <i class="user icon"></i>
+                    <%=el.dataValues.id%>
+                </a>
+            </div>
+        </div>
+        <%})%>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
 </body>
+
 </html>
