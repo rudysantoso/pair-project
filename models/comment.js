@@ -4,9 +4,10 @@ module.exports = (sequelize, DataTypes) => {
   class Comment extends Model {}
   Comment.init({
     song_id: DataTypes.INTEGER,
-    user_id: DataTypes.INTEGER
+    user_id: DataTypes.INTEGER,
+    Content: DataTypes.STRING
   },{
-    sequelize,modelName: 'Comment'
+    sequelize, modelName: 'Comment'
   });
   Comment.associate = function(models) {
     // associations can be defined here

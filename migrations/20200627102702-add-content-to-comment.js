@@ -10,7 +10,7 @@ module.exports = {
       return queryInterface.createTable('users', { id: Sequelize.INTEGER });
     */
 
-    return queryInterface.addColumn('Songs','comments',Sequelize.STRING);
+    return queryInterface.addColumn('Comment', 'Content', Sequelize.STRING)
   },
 
   down: (queryInterface, Sequelize) => {

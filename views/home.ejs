@@ -4,78 +4,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shoes Shop</title>
+    <title>Fosan Cloud</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
-    <link rel="stylesheet" href="/cssnya.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
 </head>
 
 <body>
-    <div class="warna">
-        <div class="warna1">
-            <div class="baris">
-                <div>
-                    <div>
-                        <img src="./image/fosanlogo.png" width="50px">
-                    </div>
-                </div>
-                <div>
-                    <h2>FOSAN STORE</h2>
-                </div>
-            </div>
-            <div class="baris">
-                <div>
-                    <h5>PRIA</h5>
-                </div>
-                <div>
-                    <h5>WANITA</h5>
-                </div>
-                <div>
-                    <h5>ANAK</h5>
+    <div class="ui secondary  menu" style="background-color: #333;">
+        <img src="/images/fosanlogo.png" width="50px">
+        <a class=" item" style="color: white;">
+            Home
+        </a>
+        <a class="item" style="color: white;">
+            Stream
+        </a>
+        <a class="item" href="/library" style="color: white;">
+            Library
+        </a>
+        <div class="right menu">
+            <div class="item">
+                <div class="ui icon input">
+                    <input type="text" placeholder="Search...">
+                    <i class="search link icon"></i>
                 </div>
             </div>
-            <div>
-                <div class="center">
-                    <input class="search" type="text" placeholder="Cari apa ?" required>
-                    <input class="button" type="button" value="Cari">
-                </div>
-            </div>
-        </div>
-        <div class="warna2">
-            <div>
-                <h5>Login!</h5>
-            </div>
-            <div>
-                <img src="./image/shopping-bag.png" width=50px>
-            </div>
+            <a class="ui item" style="color: white;">
+                Sign up
+            </a>
+            <a class="ui item" style="color: white;">
+                Sign in
+            </a>
         </div>
     </div>
+    <!--banner-->
+    <div class="background">
+        <h1>Connect on Fosan Cloud <br>
+            Discover, stream, and share a constantly expanding mix of music<br>
+            from emerging and major artists around the
+            world.</h1>
+    </div>
+    <!--body-->
+    <section class="about">
+        <div class="container">
+            <h3>ABOUT US</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Dapibus ultrices in iaculis nunc sed augue lacus. Quam nulla porttitor massa id
+                neque aliquam. Ultrices mi tempus imperdiet nulla malesuada. Eros in cursus turpis massa tincidunt dui
+                ut ornare lectus. Egestas sed sed risus pretium. Lorem dolor sed viverra ipsum. Gravida rutrum quisque
+                so ya there is some food
+                non tellus.</p>
+        </div>
+    </section>
+    <!--service-->
+    <section class="service">
+        <div class="container">
+            <h3>SERVICE AND OTHER</h3>
+            <div class="box">
+                <div class="col-4">
+                    <div class="gambar"><i class="fas fa-mobile"></i></div>
+                    <h4>Mobile Apps</h4>
+                </div>
+                <div class="col-4">
+                    <div class="gambar"><i class="fas fa-mobile"></i></div>
+                    <h4>Sosial Media</h4>
+                </div>
+                <div class="col-4">
+                    <div class="gambar"><i class="fas fa-mobile"></i></div>
+                    <h4>Support</h4>
+                </div>
+                <div class="col-4">
+                    <div class="gambar"><i class="fas fa-mobile"></i></div>
+                    <h4>Subscription</h4>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <!-- body -->
-    <div class="bodynya">
-        <% data.forEach(el => { %>
-        <div class="ui card">
-            <div class="image">
-                <img src="<%= el.dataValues.image%>">
-            </div>
-            <div class="content">
-                <a class="header"><%=el.dataValues.merk%></a>
-                <div class="meta">
-                    <span class="date"><%=el.dataValues.jenis%></span>
-                </div>
-                <div class="description">
-                    <%=el.dataValues.harga%>
-                </div>
-            </div>
-            <div class="extra content">
-                Ukuran <%=el.dataValues.ukuran%>
-                <a>
-                    <i class="user icon"></i>
-                    <%=el.dataValues.id%>
-                </a>
-            </div>
+    <!--footer-->
+    <footer>
+        <div class="container">
+            <small>copyright &copy; 2020 - FosanCloud. All Right Reserved.</small>
         </div>
-        <%})%>
-    </div>
+    </footer>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"
         integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous">
         </script>

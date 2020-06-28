@@ -6,7 +6,6 @@ module.exports = (sequelize, DataTypes) => {
     Title: DataTypes.STRING,
     Artist: DataTypes.STRING,
     Genre: DataTypes.STRING,
-    comments: DataTypes.STRING
   }, {
     sequelize
   });
