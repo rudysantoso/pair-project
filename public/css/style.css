@@ -167,3 +167,17 @@ footer {
     color: #fff;
     text-align: center;
 }
+
+
+.ui.secondary.menu {
+    background: 0 0;
+    margin-left: -.35714286em;
+    margin-right: -.35714286em;
+    border-radius: 0;
+    border: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.ui.secondary.menu .element.style {
+	background-color: blue !important;
+}

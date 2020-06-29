@@ -4,9 +4,9 @@ class loginController {
     static login(req, res) {
         res.render('login')
     }
-    static masukLogin(req, res, next) {
-        User.
-    }
+    //     static masukLogin(req, res, next) {
+    //         User.
+    //     }
 }
 
 module.exports = loginController
