@@ -23,7 +23,9 @@ class UserController {
                 if (user && compare(password, user.password)) {
                     let payload = { id: user.id, nama: user.nama }
                     let token = generateToken(payload)
-                    res.status(200).json({ token })
+                    localStorage.setItem('token', token)
+                    res.redirect('/')
+                    // res.status(200).json({ token })
                 } else {
                     res.status(400).json('msg: data tidak ada')
                 }

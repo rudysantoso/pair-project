@@ -8,20 +8,31 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
     <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+    <!-- <style>
+        .ui.secondary.menu {
+            background-color: red;
+            padding: 0 20px;
+        }
+    </style> -->
 </head>
 
 <body>
     <!--header-->
-    <div class="ui secondary  menu" style="background-color: #333; width: 100%;">
-        <img src="/images/fosanlogo.png" width="50px">
+    <!-- <div class="ui secondary  menu" style="padding: 0 20px;!important">
+        <img src=" /images/fosanlogo.png" width="50px">
         <a class=" item" style="color: white;">
             Home
+        </a> -->
+    <div class="ui secondary menu" style=" background-color: #000; width: 100%">
+        <img src="/images/fosan4.jpg" width="15%" style="border-radius: 5px">
+        <a class=" item" link href="/"
+            style="border-radius: 0; border-right:1px solid black; color: rgb(255, 60, 0) !important;">
+            HOME
         </a>
-        <a class="item" style="color: white;">
-            Stream
-        </a>
-        <a class="item" href="/library" style="color: white;">
-            Library
+        <a class="item" link href="/library"
+            style="border-radius: 0; border-right:1px solid black;color: rgb(255, 60, 0) !important;">
+            STREAM
         </a>
         <div class="right menu">
             <div class="item">
@@ -30,32 +41,179 @@
                     <i class="search link icon"></i>
                 </div>
             </div>
-            <a class="ui item" href="/register" style="color: white;">
-                Sign up
-            </a>
-            <a class="ui item" href="/login" style="color: white;">
-                Sign in
+            <a class="ui item" href="/register"
+                style="border-radius: 5px; background-color: rgb(255, 60, 0); border: 1px solid #000; color: #000;">
+                CREATE ACCOUNT
             </a>
         </div>
     </div>
+
     <!--banner-->
-    <div class="background">
-        <h1>Connect on Fosan Cloud <br><br>
-            Discover, stream, and share a constantly expanding mix of music from emerging <br>and
-            major artists around the world.</h1>
+    <div class="background" style="position: relative;">
+        <div
+            style="width:100%;position: absolute;left:0;top:0;bottom:0;z-index: 1;display: flex;align-items: center;padding-left: 30px;padding-right: 30px;">
+            <h1 style="background-color: rgba(255,255,255,0.5);">Connect on Fosan Cloud <br><br>
+                Discover, stream, and share a constantly expanding mix of music from emerging <br>and
+                major artists around the world.</h1>
+            <div class="ui secondary  menu"
+                style="font-size: 15px; background-color: rgba(255, 60, 0, 0.7);border-radius: 5px;top: 50%; left: 70% !important;">
+                <a class="item" link href="http://localhost:3000/login" style="color: white !important;">
+                    <h1><b>SIGN IN</b></h1>
+                </a>
+            </div>
+        </div>
+
         <!--slider-->
+
         <div class="slider">
             <figure>
+
                 <div class="slide">
-                    <img src="/images/1.jpg">
+                    <img src="/images/s3.jpg">
                 </div>
                 <div class="slide">
-                    <img src="/images/asd.png">
+                    <img src="/images/s4.jpg">
                 </div>
             </figure>
         </div>
     </div>
     <!--body-->
+    <section>
+        <div class="container-featured">
+            <div class="featured">
+                <div class="up">
+                    <h1 class="title">Hear what’s trending for free in the FosanCloud community</h1>
+                    <br />
+                </div>
+                <div class="down">
+                    <div class="box-product">
+                        <div class="product">
+                            <div class="product-up">
+                                <img src="images/a1.jpg">
+                            </div>
+                            <div class="product-down">
+                                <h3 class="title">Blink 182<br>
+                                    Blink 182
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-product">
+                        <div class="product">
+                            <div class="product-up">
+                                <img src="images/a2.jpg">
+                            </div>
+                            <div class="product-down">
+                                <h3 class="title">Green Day<br>
+                                    Uno!
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-product">
+                        <div class="product">
+                            <div class="product-up">
+                                <img src="images/a3.jpg">
+                            </div>
+                            <div class="product-down">
+                                <h3 class="title">30 Second to Mars<br>
+                                    Walk On Water
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-product">
+                        <div class="product">
+                            <div class="product-up">
+                                <img src="images/a4.jpg">
+                            </div>
+                            <div class="product-down">
+                                <h3 class="title">Dream Theater<br>
+                                    Train Of Thought
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="container-featured">
+            <div class="featured">
+                <div class="down">
+                    <div class="box-product">
+                        <div class="product">
+                            <div class="product-up">
+                                <img src="images/a5.jpg">
+                            </div>
+                            <div class="product-down">
+                                <h3 class="title">Pamungkas<br>
+                                    Walk The Walk
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-product">
+                        <div class="product">
+                            <div class="product-up">
+                                <img src="images/a6.jpg">
+                            </div>
+                            <div class="product-down">
+                                <h3 class="title">G- Dragon<br>
+                                    Kwon Ji Yong
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-product">
+                        <div class="product">
+                            <div class="product-up">
+                                <img src="images/a7.webp">
+                            </div>
+                            <div class="product-down">
+                                <h3 class="title">Bring Me To Horizon<br>
+                                    Parasite Eve
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-product">
+                        <div class="product">
+                            <div class="product-up">
+                                <img src="images/a8.jpeg">
+                            </div>
+                            <div class="product-down">
+                                <h3 class="title">Angel And Airways<br>
+                                    Love
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--app-->
+    <section>
+        <div class="container-footer-big">
+            <div class="footer-big">
+                <div class="one">
+                    <div class="up">
+                        <img src="/images/app.jpg">
+                    </div>
+                </div>
+                <div class="four">
+                    <h1 class="title">Never stop listening</h1>
+                    <p>FosanCloud is available on Web, iOS, Android, Sonos, Chromecast, and Xbox One.</p>
+                    <img src="/images/apple.png">
+                    <img src="/images/google.png">
+                </div>
+            </div>
+        </div>
+        <div class="picture">
+            <img src="/images/sentuhan.jpg">
+        </div>
+    </section>
     <section class="about">
         <div class="container">
             <h3>ABOUT US</h3>
@@ -77,7 +235,7 @@
                     <h4>Mobile Apps</h4>
                 </div>
                 <div class="col-4">
-                    <div class="gambar"><i class="fas fa-mobile"></i></div>
+                    <div class="gambar"><i class="fab fa-twitter-square"></i></div>
                     <h4>Sosial Media</h4>
                 </div>
                 <div class="col-4">
