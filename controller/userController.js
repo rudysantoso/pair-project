@@ -8,12 +8,14 @@ class UserController {
         const hash = hashPassword(password)
         User.create({ nama, email, password: hash })
             .then(result => {
-                res.status(201).json('register telah berhasil')
+                console.log('masuk')
+                res.status(201).json({ msg: 'register telah berhasil'})
             })
             .catch(err => {
                 res.status(400).json(err)
             })
     }
+
     static login(req, res, next) {
         const { nama, password } = req.body
         console.log(req.body)
@@ -23,16 +25,28 @@ class UserController {
                 if (user && compare(password, user.password)) {
                     let payload = { id: user.id, nama: user.nama }
                     let token = generateToken(payload)
-                    localStorage.setItem('token', token)
-                    res.redirect('/')
-                    // res.status(200).json({ token })
+                    // localStorage.setItem('token', token)
+                    // res.redirect('/')
+                    // console.log('login masuk')
+                    // console.log( token )
+                    res.status(200).json({ msg: token })
                 } else {
-                    res.status(400).json('msg: data tidak ada')
+                    res.status(400).json('msg: username / password is invalid')
                 }
             })
             .catch(err => {
                 res.status(400).json(err)
             })
+    }
+
+    static read(req, res){
+        User.findAll()
+            .then( data => {
+                res.status(200).json( data )
+            })
+            .catch( err => {
+                res.status(400).json({ msg: err })
+            })    
     }
 }
 

@@ -55,7 +55,11 @@
                 <div class="description">
                 </div>
                 <div class="extra">
-                    <span><%=el.dataValues.comments%></span>
+                    <audio controls>
+                        <source src="/lagu/<%=el.dataValues.comments%>"  type="audio/mpeg">
+                            <span><%=el.dataValues.comments%></span>
+                      Your browser does not support the audio element.
+                      </audio> 
                 </div>
                 <div class="ui bottom attached button" style="background-color: rgb(255, 60, 0);">
                     <i class="add icon"><a href="/comment"></i>
