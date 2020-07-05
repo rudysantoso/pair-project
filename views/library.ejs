@@ -11,14 +11,14 @@
 </head>
 
 <body>
-    <div class="ui secondary menu" style=" background-color: #000; width: 100%">
+    <div class="ui secondary menu" style=" background-color: #333; width: 100%;">
         <img src="/images/fosan4.jpg" width="15%" style="border-radius: 5px">
         <a class=" item" link href="/"
-            style="border-radius: 0; border-right:1px solid black; color: rgb(255, 60, 0) !important;">
+            style="border-radius: 0;border-left:2px solid #000; border-right:2px solid #000; color: rgb(255, 60, 0) !important;">
             HOME
         </a>
         <a class="item" link href="/library"
-            style="border-radius: 0; border-right:1px solid black;color: rgb(255, 60, 0) !important;">
+            style="border-radius: 0; border-right:2px solid #000;color: rgb(255, 60, 0) !important;">
             STREAM
         </a>
         <div class="right menu">
@@ -28,36 +28,40 @@
                     <i class="search link icon"></i>
                 </div>
             </div>
-            <a class="ui item" href="/register" style="color: rgb(255, 60, 0);">
-                SIGN UP
+            <% if(token){ %>
+            <a class="ui item" href="" style="color: rgb(255, 60, 0);">sign in</a>
+            <% } else {  %>
+            <a class="ui item" href="/logout" style="color: rgb(255, 60, 0);">
+                Sign out
             </a>
-            <a class="ui item" href="/login" style="color: rgb(255, 60, 0);">
-                SIGN IN
-            </a>
+            <% } %>
         </div>
+
     </div>
     <!--body-->
     <% data.forEach(el => { %>
-    <div class="ui items" style="  background-color: #fff !important;">
-        <div class="item">
-
-            <div class="image" style="width: 300px;">
-                <img src="/images/image.png">
+    <div class="ui items" style="width: 90%; background-color: #fff !important;
+    margin: 0 auto;">
+        <div class="item" style="align-items: center !important;">
+            <div class="image" style="width: 225px !important;">
+                <img src="/images/song.png" style="width: 225px">
             </div>
-            <div class="content"">
-                <a class=" header"><%=el.dataValues.Title%></a>
+            <div class=" content">
+                <a class=" header" href="/detail-song/<%=el.dataValues.id%>"><%=el.dataValues.Title%></a>
                 <div class="meta">
                     <span><%=el.dataValues.Artist%></span>
                 </div>
                 <div class="meta">
                     <span><%=el.dataValues.Genre%></span>
                 </div>
-                <div class="description">
-                </div>
+
                 <div class="extra">
-                    <span><%=el.dataValues.comments%></span>
+                    <audio controls>
+                        <source src="/music/<%=el.dataValues.comments%>" type="audio/mpeg">
+                        <span><%=el.dataValues.comments%></span>
+                    </audio>
                 </div>
-                <div class="ui bottom attached button" style="background-color: rgb(255, 60, 0);">
+                <div class="ui bottom attached button" style="margin:0 auto;background-color: rgb(255, 60, 0);">
                     <i class="add icon"><a href="/comment"></i>
                     Add Comments
                 </div>
@@ -65,6 +69,7 @@
         </div>
     </div>
     <% }) %>
+
     <!--footer-->
     <footer>
         <div class="container">

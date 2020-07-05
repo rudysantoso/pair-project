@@ -13,7 +13,8 @@ body {
 
 .slider{
   overflow: hidden;
-  
+  width: 100%;
+  margin: 0 auto;
   height: 100%;
   border-top: 4px solid rgb(255, 60, 0);
 }
@@ -118,6 +119,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 90%;
+    margin: 0 auto;
 }
 .background h1 {
     color: #050505;
@@ -126,6 +129,9 @@ body {
 
 section {
     padding: 40px 0;
+    width: 90%;
+    margin: 0 auto;
+    
 }
 section h3 {
     text-align: center;
@@ -141,6 +147,7 @@ section p {
   background-color: #fff;
   padding-top: 30px;
   padding-bottom: 30px;
+
 }
 
 
@@ -200,7 +207,7 @@ section p {
     padding-bottom: 80px;
 }
 .service {
-    background-color: #e9e6e6;
+    background-color: #fff;
 }
 .box {
     /* border: 1px solid; */
@@ -243,7 +250,7 @@ section p {
 }
 
 .container-footer-big .footer-big{
-  width: 85%;
+  width: 100%;
   /* height: 100px; */
   margin:0 auto;
   /* background-color: red; */
@@ -259,11 +266,11 @@ section p {
 .container-footer-big .footer-big .one .up{
   width: 50%;
   /* height: 80px; */
+
   /* background-color: palevioletred; */
   display: flex;
   align-items: center;
 }
-
 .container-footer-big .footer-big .four{
   width: 50%;
   /* height: 100px; */
@@ -273,6 +280,9 @@ section p {
 }
 
 .container-footer-big .footer-big .four h1{
+  text-align: justify;
+}
+.container-footer-big .footer-big .four p{
   text-align: justify;
 }
 
@@ -289,9 +299,13 @@ section p {
   /* border:1px solid yellow; */
   display: flex;
 }
+section .picture img{
+  width: 100%;
+}
 footer {
     padding: 15px 0;
     background-color: #333;
     color: #fff;
     text-align: center;
 }
+

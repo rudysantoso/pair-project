@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fosan Cloud</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+    <link rel="stylesheet" href="/css/detail.css" type="text/css">
+</head>
+
+<body>
+    <div class="ui secondary menu" style=" background-color: #333; width: 100%;">
+        <img src="/images/fosan4.jpg" width="15%" style="border-radius: 5px">
+        <a class=" item" link href="/"
+            style="border-radius: 0;border-left:2px solid #000; border-right:2px solid #000; color: rgb(255, 60, 0) !important;">
+            HOME
+        </a>
+        <a class="item" link href="/library"
+            style="border-radius: 0; border-right:2px solid #000;color: rgb(255, 60, 0) !important;">
+            STREAM
+        </a>
+        <div class="right menu">
+            <div class="item">
+                <div class="ui icon input">
+                    <input type="text" placeholder="Search...">
+                    <i class="search link icon"></i>
+                </div>
+            </div>
+            <% if(token){ %>
+            <a class="ui item" href="" style="color: rgb(255, 60, 0);">sign in</a>
+            <% } else {  %>
+            <a class="ui item" href="/logout" style="color: rgb(255, 60, 0);">
+                Sign out
+            </a>
+            <% } %>
+        </div>
+    </div>
+    <!--body-->
+
+    <% data.forEach(el => { %>
+    <div class="ui items" style="width: 90%; background-color: #fff !important;
+        margin: 0 auto;">
+        <div class="image" style="margin: 0 auto; text-align: center; width: 225px !important;">
+            <img src="/images/song.png" style="width: 225px">
+        </div>
+        <table class="ui definition table"
+            style="width: 50%;margin: 0 auto; background-color: rgb(185, 190, 189) !important;">
+            <tbody>
+                <tr>
+                    <td class="two wide column" style="background-color: rgb(149, 156, 160);">Title</td>
+                    <td><%=el.dataValues.Title%></td>
+                </tr>
+                <tr>
+                    <td style="background-color:rgb(149, 156, 160);">Artist</td>
+                    <td> <%=el.dataValues.Artist%></td>
+                </tr>
+                <tr>
+                    <td style="background-color:rgb(149, 156, 160);">Genre</td>
+                    <td> <%=el.dataValues.Genre%></td>
+                </tr>
+                <tr>
+                    <td style="background-color: rgb(149, 156, 160);">comments</td>
+                    <td> <%=el.dataValues.comments%></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <% }) %>
+
+    <div class="ui red three item menu" style="margin: 0 auto; text-align: center; width: 100%!important;">
+        <a class="item" link href="http://localhost:3000/library"
+            style="text-align: bottom;margin: 0 auto;width: 100%;border: 1px solid;background-color:rgb(255, 60, 0) ;">
+            BACK
+        </a>
+    </div><br><br><br><br><br><br><br>
+    <!--footer-->
+    <footer>
+        <div class="container">
+            <small>copyright &copy; 2020 - FosanCloud. All Right Reserved.</small>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+</body>
+
+</html>

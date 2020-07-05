@@ -1,8 +1,9 @@
-const { Comment } = require('../models')
+const { Comment, Song, User } = require('../models')
+
 
 class CommentController {
     static read(req, res) {
-        Comment.findAll()
+        Song.findAll()
             .then(data => {
                 res.status(200).json(data)
             })
@@ -10,18 +11,66 @@ class CommentController {
                 res.status(400).json(err)
             })
     }
-
-    static create(req, res) {
-        const { song_id, user_id, Content } = req.body
-        Comment.create({ song_id, user_id, Content })
+    static findOneReview(req, res) {
+        let song
+        let user_id
+        User.findOne({
+            where: {
+                nama: req.user.nama
+            }
+        })
+            .then(user => {
+                user_id = user.dataValues.id
+                return song
+                    .findByPk(req.params.id, {
+                        include: [
+                            {
+                                model: comment,
+                                include: [user]
+                            }
+                        ]
+                    })
+            })
+            .then(foundSong => {
+                song = foundSong
+                return song
+            })
+    }
+    static createDuls(req, res) {
+        Song.findOne({ id: req.params.id })
             .then(data => {
-                res.status(201).json({ msg: 'berhasil membuat Comment' })
+                // res.json(data)
+                res.render('addreview', { data })
+            })
+            .catch(err => {
+                res.redirect(`/library ${req.params.id}`)
+            })
+    }
+    static createPost(req, res) {
+        let user_id
+        User.findOne({
+            where: {
+                id: req.user.id
+            }
+        })
+            .then(user => {
+                user_id = user.dataValues.id
+                return Comment
+                    .create({
+                        reviewTitle: req.body.reviewTitle,
+                        rating: req.body.rating,
+                        song_id: req.params.id,
+                        user_id: req.user.id,
+                    })
+            })
+            .then(created => {
+                res.redirect(`/detail/${req.params.id}`)
             })
             .catch(err => {
                 res.status(400).json(err)
+                // res.redirect(`/detail/${req.params.id}/createDuls`)
             })
     }
-
     static update(req, res) {
         const { Content } = req.body
         const { id } = req.params

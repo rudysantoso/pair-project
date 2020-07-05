@@ -16,7 +16,7 @@ class SongController {
         const { Title, Artist, Genre, comments } = req.body
         Song.create({ Title, Artist, Genre, comments })
             .then(data => {
-                res.status(201).json({ msg: 'data song berhasil dibuat' })
+                res.render('UpdateSong', { data })
             })
             .catch(err => {
                 res.status(400).json(err)
@@ -28,7 +28,7 @@ class SongController {
         const { id } = req.params
         Song.update({ Title }, { where: { id } })
             .then(data => {
-                res.status(200).json({ msg: 'Title berhasil diupdate' })
+                res.render('UpdateSong', { data })
             })
             .catch(err => {
                 res.status(400).json(err)
@@ -39,7 +39,43 @@ class SongController {
         const { id } = req.params
         Song.destroy({ where: { id } })
             .then(data => {
-                res.status(200).json({ msg: 'Song berhasil dihapus' })
+                res.redirect('/admin')
+            })
+            .catch(err => {
+                res.status(400).json(err)
+            })
+    }
+    static detailSong(req, res, next) {
+        const { id } = req.params
+        const { Title, Artist, Genre, comments } = req.body
+        Song.findAll({ where: { id } }, { Title, Artist, Genre, comments })
+
+            .then(data => {
+                //  console.log(data)
+                res.render('detail', { data })
+            })
+            .catch(err => {
+                res.status(400).json(err)
+            })
+    }
+    static findTitle(req, res, next) {
+        const { Title } = req.params
+        const { Artist, Genre, comments } = req.body
+        console.log(Title)
+        Song.findAll({ where: { Title } }, { Title, Artist, Genre, comments })
+            .then(data => {
+                res.render('library', { data })
+            })
+            .catch(err => {
+                res.status(400).json(err)
+            })
+    }
+    static Song(req, res, next) {
+        const { Title, Artist, Genre, comments } = req.body
+        Song.findAll({ Title, Artist, Genre, comments })
+            .then(data => {
+                console.log(data)
+                res.render('admin', { data })
             })
             .catch(err => {
                 res.status(400).json(err)

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+</head>
+
+<body>
+    <!--header-->
+    <%- include ('header') -%>
+
+    <!--body-->
+    <% data.forEach(el => { %>
+    <div class="ui items" style="  background-color: #fff !important;width: 90%;
+        margin: 0 auto;">
+        <div class="item">
+            <div class="image" style="width: 225px !important;">
+                <img src="/images/song.png" style="width: 225px">
+            </div>
+            <div class=" content">
+                <a class=" header"><%=el.dataValues.Title%></a>
+                <div class="meta">
+                    <span><%=el.dataValues.Artist%></span>
+                </div>
+                <div class="meta">
+                    <span><%=el.dataValues.Genre%></span>
+                </div>
+
+                <div class="extra">
+                    <audio controls>
+                        <source src="/music/<%=el.dataValues.comments%>" type="audio/mpeg">
+                        <span><%=el.dataValues.comments%></span>
+                    </audio>
+                </div>
+                <div class="tek">
+                </div>
+                <a class="tombol tombol-beli" href="/update-song/<%=el.dataValues.id%>">Update</a>
+                <a class="tombol tombol-beli" href="/<%=el.dataValues.id%>">Delete</a>
+                <a class="tombol tombol-beli" href="/detail-song/<%=el.dataValues.id%>">Detail</a>
+            </div>
+        </div>
+    </div>
+    </div>
+    <% }) %>
+    <!--footer-->
+    <footer>
+        <div class="container">
+            <small>copyright &copy; 2020 - FosanCloud. All Right Reserved.</small>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+</body>
+
+</html>

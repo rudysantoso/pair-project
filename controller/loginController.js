@@ -1,4 +1,5 @@
 const { User } = require('../models')
+const { verifyToken } = require('../helpers/jwt')
 
 class loginController {
     static login(req, res) {
@@ -7,6 +8,10 @@ class loginController {
     // static masukLogin(req, res, next) {
     //     User.
     // }
+    static logout(req, res) {
+        res.clearCookie('token');
+        res.redirect('/')
+    }
 }
 
 module.exports = loginController

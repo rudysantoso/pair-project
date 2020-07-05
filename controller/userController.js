@@ -1,6 +1,7 @@
 const { User } = require('../models')
 const { hashPassword, compare } = require('../helpers/bcryptjs')
 const { generateToken } = require('../helpers/jwt')
+const { cookie } = require('request')
 
 class UserController {
     static register(req, res, next) {
@@ -16,15 +17,15 @@ class UserController {
     }
     static login(req, res, next) {
         const { nama, password } = req.body
-        console.log(req.body)
         User.findOne({ where: { nama } })
             .then(data => {
                 const user = data.dataValues
+                console.log(user)
                 if (user && compare(password, user.password)) {
                     let payload = { id: user.id, nama: user.nama }
                     let token = generateToken(payload)
-                    localStorage.setItem('token', token)
-                    res.redirect('/')
+                    res.cookie('token', token)
+                    res.redirect('/library')
                     // res.status(200).json({ token })
                 } else {
                     res.status(400).json('msg: data tidak ada')
