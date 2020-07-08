@@ -44,10 +44,9 @@
     </div>
     <!--body-->
 
-<<<<<<< HEAD
-    <div style="width: 100%;height: ;background-color: ;">
-        <div style="width: 90%;height: ;background-color: ;margin:0 auto;display: flex;">
-            <div style="width: 70%;height: ;background-color: ;">
+    <div style="width: 100%;">
+        <div style="width: 90%;margin:0 auto;display: flex;">
+            <div style="width: 70%;">
                 <% data.forEach(el => { %>
                 <div class="ui items" style="width: 100%; background-color: #fff !important;
                     margin: 0 auto;padding-top: 10px;padding-bottom: 10px;margin-top: 15px;">
@@ -76,37 +75,11 @@
                                 </div> -->
                         </div>
                     </div>
-=======
-            <div class="image" style="width: 300px;">
-                <img src="/images/image.png">
-            </div>
-            <div class="content"">
-                <a class=" header"><%=el.dataValues.Title%></a>
-                <div class="meta">
-                    <span><%=el.dataValues.Artist%></span>
-                </div>
-                <div class="meta">
-                    <span><%=el.dataValues.Genre%></span>
-                </div>
-                <div class="description">
-                </div>
-                <div class="extra">
-                    <audio controls>
-                        <source src="/lagu/<%=el.dataValues.comments%>"  type="audio/mpeg">
-                            <span><%=el.dataValues.comments%></span>
-                      Your browser does not support the audio element.
-                      </audio> 
-                </div>
-                <div class="ui bottom attached button" style="background-color: rgb(255, 60, 0);">
-                    <i class="add icon"><a href="/comment"></i>
-                    Add Comments
->>>>>>> b1839700c45227b3f83fa456e1a87158aa8c6526
                 </div>
                 <% }) %>
 
             </div>
-            <div
-                style="width: 30%;height: 500px;background-color: ;overflow-y: scroll;padding-left: 10px;padding-right: 10px;">
+            <div style="width: 30%;height: 500px;overflow-y: scroll;padding-left: 10px;padding-right: 10px;">
                 <a class="twitter-timeline" href="https://twitter.com/SoundCloud?ref_src=twsrc%5Etfw">Tweets by
                     SoundCloud</a>
                 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

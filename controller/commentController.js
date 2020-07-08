@@ -16,7 +16,7 @@ class CommentController {
         let user_id
         User.findOne({
             where: {
-                nama: req.user.nama
+                name: req.user.nama
             }
         })
             .then(user => {
@@ -33,7 +33,8 @@ class CommentController {
             })
             .then(foundSong => {
                 song = foundSong
-                return song
+                res.json(song)
+                // return song
             })
     }
     static createDuls(req, res) {
@@ -43,7 +44,7 @@ class CommentController {
                 res.render('addreview', { data })
             })
             .catch(err => {
-                res.redirect(`/detail ${req.params.id}`)
+                res.redirect(`/detail-song${req.params.id}`)
             })
     }
     static createPost(req, res) {
@@ -64,7 +65,7 @@ class CommentController {
                     })
             })
             .then(created => {
-                res.redirect(`/detail/${req.params.id}`)
+                res.redirect(`/detail-song/${req.params.id}`)
             })
             .catch(err => {
                 res.status(400).json(err)

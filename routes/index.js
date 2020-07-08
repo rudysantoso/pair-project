@@ -29,11 +29,12 @@ router.get('/addsong', (req, res) => {
     res.render('addsong')
 })
 router.get('/sign up', UserController.register)
-router.get('/comment', CommentController.read)
+router.get('/detail', CommentController.read)
 router.get('/register', registerController.register)
 
 // Detail
 router.get('/detail-song/:id', SongController.detailSong)
+
 router.get('/library-title/:library', SongController.findTitle)
 
 // Admin
@@ -42,6 +43,7 @@ router.get('/addsong', SongController.create)
 router.get('/logout', loginController.logout)
 router.get('/addreview/:id', CommentController.createDuls)
 router.post('/addreview/:id', authentication, CommentController.createPost)
+router.get('/detail-song/:id', CommentController.findOneReview)
 
 
 router.get('/update-song/:id', SongController.update)
