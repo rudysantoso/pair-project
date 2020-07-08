@@ -11,6 +11,10 @@
 </head>
 
 <body>
+    <!--loader-->
+    <div class="bg-loader">
+        <div class="loader"></div>
+    </div>
     <div class="ui secondary menu" style=" background-color: #333; width: 100%;">
         <img src="/images/fosan4.jpg" width="15%" style="border-radius: 5px">
         <a class=" item" link href="/"
@@ -84,6 +88,11 @@
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"
         integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous">
         </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".bg-loader").hide();
+        })
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
 </body>
 

@@ -7,6 +7,11 @@
     <title>Fosan Cloud</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
     <link rel="stylesheet" href="/css/style.css" type="text/css">
 
     <!-- <style>
@@ -15,34 +20,28 @@
             padding: 0 20px;
         }
     </style> -->
+
+
+    <style>
+        .slick-prev:before,
+        .slick-next:before {
+            color: rgb(255, 60, 0);
+        }
+
+        .slider-thumb:hover {
+            background-color: rgb(255, 60, 0);
+        }
+    </style>
 </head>
 
 <body>
+    <!--loader-->
+    <div class="bg-loader">
+        <div class="loader"></div>
+    </div>
     <!--header-->
     <%- include ('header') -%>
-    <!-- <div class="ui secondary menu" style=" background-color: #000; width: 100%;">
-        <img src="/images/fosan4.jpg" width="15%" style="border-radius: 5px">
-        <a class=" item" link href="/"
-            style="border-radius: 0;border-left:1px solid rgb(255, 60, 0); border-right:1px solid rgb(255, 60, 0); color: rgb(255, 60, 0) !important;">
-            HOME
-        </a>
-        <a class="item" link href="/library"
-            style="border-radius: 0; border-right:1px solid rgb(255, 60, 0);color: rgb(255, 60, 0) !important;">
-            STREAM
-        </a>
-        <div class="right menu">
-            <div class="item">
-                <div class="ui icon input">
-                    <input type="text" placeholder="Search...">
-                    <i class="search link icon"></i>
-                </div>
-            </div>
-            <a class="ui item" href="/register"
-                style="border-radius: 5px; background-color: rgb(255, 60, 0); border: 1px solid #000; color: #000;">
-                CREATE ACCOUNT
-            </a>
-        </div>
-    </div> -->
+
 
     <!--banner-->
     <div class="background" style="position: relative;">
@@ -80,8 +79,75 @@
                 <div class="up">
                     <h1 class="title">Hear what’s trending for free in the FosanCloud community</h1>
                     <br />
+
                 </div>
-                <div class="down">
+                <br />
+                <center>
+                    <div class="slider-thumb" style="padding-top: 30px;background-color: #fff;padding-bottom: 30px">
+                        <div>
+                            <div
+                                style="background-color:;border:;border-radius: 6px;margin-left: 15px;margin-right: 15px;">
+                                <img src="/music/a.jpeg" style="width: 100%;">
+                                <h3 class="title" style="margin-bottom: 0px;margin-top: 0px;">Blink-182<br>
+                                    Enema Of The State
+                                </h3>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div
+                                style="background-color:;border:;border-radius: 6px;margin-left: 15px;margin-right: 15px;">
+                                <img src="/music/b.jpg" style="width: 100%;">
+                                <h3 class="title" style="margin-bottom: 0px;margin-top: 0px;">30 Second to Mars<br>
+                                    Walk On Water
+                                </h3>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div
+                                style="background-color:;border:;border-radius: 6px;margin-left: 15px;margin-right: 15px;">
+                                <img src="/music/c.jpg" style="width: 100%;">
+                                <h3 class="title" style="margin-bottom: 0px;margin-top: 0px;">Dream Theater<br>
+                                    Metropolis
+                                </h3>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div
+                                style="background-color:;border:;border-radius: 6px;margin-left: 15px;margin-right: 15px;">
+                                <img src="/music/d.jpg" style="width: 100%;">
+                                <h3 class="title" style="margin-bottom: 0px;margin-top: 0px;">Slipknot<br>
+                                    We Are Not Your Kind
+                                </h3>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div
+                                style="background-color:;border:;border-radius: 6px;margin-left: 15px;margin-right: 15px;">
+                                <img src="/music/e.png" style="width: 100%;">
+                                <h3 class="title" style="margin-bottom: 0px;margin-top: 0px;">Bring Me The Horizon<br>
+                                    Sempiternal
+                                </h3>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div
+                                style="background-color:;border:;border-radius: 6px;margin-left: 15px;margin-right: 15px;">
+                                <img src="/music/f.jpg" style="width: 100%;">
+                                <h3 class="title" style="margin-bottom: 0px;margin-top: 0px;">My Chemical Romance<br>
+                                    Three Cheers For Sweet Revenge
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </center>
+    </section>
+
+    <!-- <div class="down">
                     <div class="box-product">
                         <div class="product">
                             <div class="product-up">
@@ -131,8 +197,8 @@
                         </div>
                     </div>
 
-                </div>
-            </div>
+                </div> -->
+    <!-- </div>
         </div>
         <div class="container-featured">
             <div class="featured">
@@ -188,7 +254,8 @@
                 </div>
             </div>
         </div>
-    </section>
+        </div>
+    
     <!--app-->
     <section>
         <div class="container-footer-big">
@@ -213,10 +280,14 @@
     <section class="about">
         <div class="container">
             <h3>ABOUT US</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Dapibus ultrices in iaculis nunc sed augue lacus. Quam nulla porttitor massa id
-                neque aliquam. Ultrices mi tempus imperdiet nulla malesuada. Eros in cursus turpis massa tincidunt dui
-                ut ornare lectus. Egestas sed sed risus pretium. Lorem dolor sed viverra ipsum. Gravida rutrum quisque
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                labore et
+                dolore magna aliqua. Dapibus ultrices in iaculis nunc sed augue lacus. Quam nulla porttitor
+                massa id
+                neque aliquam. Ultrices mi tempus imperdiet nulla malesuada. Eros in cursus turpis massa
+                tincidunt dui
+                ut ornare lectus. Egestas sed sed risus pretium. Lorem dolor sed viverra ipsum. Gravida
+                rutrum quisque
                 so ya there is some food
                 non tellus.</p>
         </div>
@@ -252,8 +323,20 @@
         </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"
-        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous">
-        </script>
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            setTimeout(function () { $(".bg-loader").hide(800); }, 1500);
+            $('.slider-thumb').slick({
+                infinite: true,
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                dots: true,
+            });
+        });
+    </script>
+
     <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
 </body>
 

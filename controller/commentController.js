@@ -25,7 +25,7 @@ class CommentController {
                     .findByPk(req.params.id, {
                         include: [
                             {
-                                model: comment,
+                                model: comments,
                                 include: [user]
                             }
                         ]
@@ -43,7 +43,7 @@ class CommentController {
                 res.render('addreview', { data })
             })
             .catch(err => {
-                res.redirect(`/library ${req.params.id}`)
+                res.redirect(`/detail ${req.params.id}`)
             })
     }
     static createPost(req, res) {

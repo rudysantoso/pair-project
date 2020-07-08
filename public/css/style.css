@@ -10,7 +10,34 @@ body {
   background-color: black;
   text-align: center;
 }
+.bg-loader {
+  background-color: #eee;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
+}
+.bg-loader .loader {
+  width: 100px;
+  height: 100px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  border-top-color: #18191A;
+  border-right-color: #18191A;
+  border-bottom-color: #18191A;
+  animation: muter .8s linear infinite;
+}
+@keyframes muter {
+  100%{
+      transform: rotate(360deg);
+  }
+}
 .slider{
   overflow: hidden;
   width: 100%;

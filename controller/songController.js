@@ -16,7 +16,7 @@ class SongController {
         const { Title, Artist, Genre, comments } = req.body
         Song.create({ Title, Artist, Genre, comments })
             .then(data => {
-                res.render('UpdateSong', { data })
+                res.render('addsong', { data })
             })
             .catch(err => {
                 res.status(400).json(err)
@@ -24,17 +24,26 @@ class SongController {
     }
 
     static update(req, res) {
-        const { Title } = req.body
+        const { Title, Artist, Genre, comments } = req.body
         const { id } = req.params
-        Song.update({ Title }, { where: { id } })
+        Song.update({ Title, Artist, Genre, comments }, { where: { id } })
             .then(data => {
-                res.render('UpdateSong', { data })
+                res.redirect('/admin')
             })
             .catch(err => {
                 res.status(400).json(err)
             })
     }
-
+    static updaterender(req, res) {
+        const { id } = req.params
+        Song.findByPk(id)
+            .then(data => {
+                res.render('updatesong', { data })
+            })
+            .catch(err => {
+                res.status(400).json(err)
+            })
+    }
     static delete(req, res) {
         const { id } = req.params
         Song.destroy({ where: { id } })
@@ -45,6 +54,7 @@ class SongController {
                 res.status(400).json(err)
             })
     }
+
     static detailSong(req, res, next) {
         const { id } = req.params
         const { Title, Artist, Genre, comments } = req.body
